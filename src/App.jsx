@@ -10,10 +10,10 @@ function App() {
   const [data, setData] = useState([]);
 
 
-  navigator.geolocation.getCurrentPosition(function (position) {
-    setLat(position.coords.latitude);
-    setLong(position.coords.longitude);
-  });
+  // navigator.geolocation.getCurrentPosition(function (position) {
+  //   setLat(position.coords.latitude);
+  //   setLong(position.coords.longitude);
+  // });
   useEffect(() => {
     const fetchData = async () => {
       navigator.geolocation.getCurrentPosition(function (position) {
