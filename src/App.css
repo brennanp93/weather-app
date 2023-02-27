@@ -79,11 +79,12 @@
     background-image: url("/public/bg3.jpg");
     background-size: cover;
 
-  }
+  }  
+  
 
   .weatherBox {
     grid-column: 1/span 3;
-    grid-row: 2/span 1;
+    grid-row: 1/span 2;
     margin: 5%;
   }
 }
