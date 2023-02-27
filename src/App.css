@@ -6,7 +6,8 @@
   grid-template-rows: 1fr 2fr 1fr;
   margin: 0;
   height: 100vh;
-  background-color: aqua;
+  background-image: url("/public/bg.jpg");
+  background-size: cover;
 }
 
 .weatherBox {
@@ -16,8 +17,9 @@
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2%;
+  background-color: rgba(171, 203, 230, 0.851);
   border: solid black 2px;
-  border-radius: 10px;
+  /* border-radius: 5px; */
   padding: 1%;
 }
 
@@ -25,28 +27,57 @@
   border: solid black 2px;
 
 
+
 }
 
 .box1,
 .box6 {
   grid-column: 1/span 2;
+
 }
 
 .box1 {
   border-radius: 10px 10px 0 0;
 }
 
+.box2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .box6 {
   border-radius: 0 0 10px 10px;
-  align-items: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 500px) {
   .App {
     display: grid;
     /* grid-template-columns: 1fr 1fr 1fr; */
-    background-color: grey;
+    background-image: url("/public/bg3.jpg");
+    background-size: cover;
 
   }
 
