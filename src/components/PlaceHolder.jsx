@@ -1,13 +1,19 @@
 // import moment from 'moment';
 export default function PlaceHolder({ weatherData }) {
-  const feelsLike = Math.round(weatherData.main.feels_like);
   const temp = Math.round(weatherData.main.temp);
   const sunrise = new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   const sunset = new Date(weatherData.sys.sunset * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });;
   const clouds = weatherData.weather[0].description.toUpperCase()
-  // const weatherIcon = weatherData.weather[0].icon
   const high = Math.round(weatherData.main.temp_max)
   const low = Math.round(weatherData.main.temp_min)
+  const humidity = weatherData.main.humidity
+  const wind = weatherData.wind.speed
+  let directions = getDirections(weatherData.wind.deg)
+  function getDirections(degrees) {
+    const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW']
+    let index = Math.round(degrees/45) % 8;
+    return directions[index]
+  }
   console.log(weatherData)
   return (
     <>
@@ -24,23 +30,28 @@ export default function PlaceHolder({ weatherData }) {
         </div>
         <div className='box4'>
           <div>
-            <img src='/sunrise.png' alt="" />
+            <img src='/white-sunrise.png' alt="" />
             <h4>{sunrise}</h4>
           </div>
-
         </div>
         <div className='box5'>
           <div>
-            <img src="/sunset.png" alt="" />
+            <img src="/white-sunset.png" alt="" />
             <h4>{sunset}</h4>
           </div>
         </div>
         <div className='box2'>
-          <h4>Feels Like:<br />&nbsp;{feelsLike}ºF</h4>
+          <section>
+            <img src="/white-dew-point.png" alt="" />
+            <h4>{humidity}%</h4>
+          </section>
         </div>
-
-
-
+        <div className='box2'>
+          <section>
+            <img src="/white-wind.png" alt="" />
+            <h4>{wind}mph&nbsp;{directions}</h4>
+          </section>
+        </div>
       </div>
     </>
   )
