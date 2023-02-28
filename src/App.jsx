@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import './App.css';
+import PlaceHolder from "./components/PlaceHolder";
 import Weather from "./components/Weather";
 
 
@@ -22,7 +23,7 @@ function App() {
         setLong(position.coords.longitude);
       });
 
-      await fetch(`${process.env.REACT_APP_API_URL}/weather/?lat=${lat}&lon=${long}&units=imperial&APPID=${process.env.REACT_APP_API_KEY}`)
+      await fetch(`https://api.openweathermap.org/data/2.5/weather/?lat=${lat}&lon=${long}&units=imperial&APPID=${process.env.REACT_APP_API_KEY}`)
         .then(res => res.json())
         .then(res => {
           setData(res)
@@ -42,7 +43,7 @@ function App() {
       {(typeof data.main != 'undefined') ?
         <Weather weatherData={data} />
         :
-        <div>Hello</div>
+        <PlaceHolder />
       }
     </div>
   );
