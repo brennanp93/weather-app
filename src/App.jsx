@@ -10,10 +10,10 @@ function App() {
   const [data, setData] = useState([]);
 
 
-  // navigator.geolocation.getCurrentPosition(function (position) {
-  //   setLat(position.coords.latitude);
-  //   setLong(position.coords.longitude);
-  // });
+  navigator.geolocation.getCurrentPosition(function (position) {
+    setLat(position.coords.latitude);
+    setLong(position.coords.longitude);
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,7 +22,7 @@ function App() {
         setLong(position.coords.longitude);
       });
 
-      await fetch(`${process.env.REACT_APP_API_URL}/weather/?lat=${33.7834494}&lon=${-117.8457956}&units=imperial&APPID=${process.env.REACT_APP_API_KEY}`)
+      await fetch(`${process.env.REACT_APP_API_URL}/weather/?lat=${lat}&lon=${long}&units=imperial&APPID=${process.env.REACT_APP_API_KEY}`)
         .then(res => res.json())
         .then(res => {
           setData(res)
