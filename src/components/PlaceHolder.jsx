@@ -9,10 +9,10 @@ export default function PlaceHolder() {
                 {moment().format('MMMM Do YYYY, h:mm a')}</p>
             </div>
             <div className='box2'>
-              <h4>Temp:<br />&nbsp;0ºF</h4>
+              <h4>Temp:<br />&nbsp;ºF</h4>
             </div>
             <div className='box3'>
-              <h4>Feels Like:<br />&nbsp;0ºF</h4>
+              <h4>Feels Like:<br />&nbsp;ºF</h4>
             </div>
             <div className='box4'>
               <h4>Sunrise:<br />&nbsp;</h4>
