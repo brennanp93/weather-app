@@ -9,10 +9,25 @@
   background-image: url("/public/bg.jpg");
   background-size: cover;
 }
+.weatherBoxSmallScreen{
+  grid-column: 2/ 2;
+  grid-row: 1/ -1;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2%;
+  /* background-color: rgba(171, 203, 230, 0.851); */
+  border: solid black 2px;
+  /* border-radius: 5px; */
+  padding: 1%;
+}
 
+.weatherBoxSmallScreen>div {
+  border: solid black 2px;
+}
 .weatherBox {
-  grid-column: 2/span 1;
-  grid-row: 2/span 1;
+  grid-column: 2/ 2;
+  grid-row: 1/ -1;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
@@ -79,9 +94,11 @@ div > img{
 @media (max-width: 500px) {
   .App {
     display: grid;
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    background-image: url("/public/bg3.jpg");
-    background-size: cover;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    background-image: url("/public/smallbg.jpg");
+    background-size:cover;
+    color: white;
 
   }  
   
@@ -90,5 +107,22 @@ div > img{
     grid-column: 1/span 3;
     grid-row: 1/span 2;
     margin: 5%;
+  }
+  .weatherBoxSmallScreen{
+    grid-column: span 2;
+    grid-row: 1/span 4;
+    display: grid;
+    height: 100%;
+    padding: 5% 5% 0 5%;;
+  }
+  .box1{
+    /* margin: 5% 5% 0 5%; */
+
+  }
+  .weatherBoxSmallScreen >div {
+    border-radius: 10px;
+    background-image: linear-gradient( rgba(30, 92, 173, 0.753), rgba(123,162,213, 0.753));
+    /* background-color: rgba(30, 92, 173, 0.753); */
+    border: none;
   }
 }

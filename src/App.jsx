@@ -27,7 +27,7 @@ function App() {
         .then(res => res.json())
         .then(res => {
           setData(res)
-          // console.log(data)
+          console.log(data)
         })
         // .catch((err) => {
         //   console.log(err.message)
@@ -41,9 +41,10 @@ function App() {
     <div className="App">
 
       {(typeof data.main != 'undefined') ?
-        <Weather weatherData={data} />
+        <PlaceHolder weatherData={data}/>
         :
-        <PlaceHolder />
+        // <Weather weatherData={data} />
+        <div>Oh, Hello</div>
       }
     </div>
   );
