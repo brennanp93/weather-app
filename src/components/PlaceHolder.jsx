@@ -18,13 +18,13 @@ export default function PlaceHolder({ weatherData }) {
         <div className='box2'>
           <div>
             <img src='/white-sunrise.png' alt="" />
-            <h4>Time of Sunrise</h4>
+            <h4>Sunrise</h4>
           </div>
         </div>
         <div className='box3'>
           <div>
             <img src="/white-sunset.png" alt="" />
-            <h4>Time of Sunset</h4>
+            <h4>Sunset</h4>
           </div>
         </div>
         <div className='box4'>
