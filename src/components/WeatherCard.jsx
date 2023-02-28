@@ -7,7 +7,7 @@ export default function WeatherCard({ weatherData }) {
   const sunset = new Date(weatherData.sys.sunset * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });;
   const clouds = weatherData.weather[0].description.toUpperCase()
   const weatherIcon = weatherData.weather[0].icon
-  console.log(weatherData)
+  // console.log(weatherData)
   return (
     <>
       <div className='weatherBox'>
