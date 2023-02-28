@@ -7,7 +7,7 @@ export default function WeatherCard({ weatherData }) {
   const sunset = new Date(weatherData.sys.sunset * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });;
   const clouds = weatherData.weather[0].description.toUpperCase()
   const weatherIcon = weatherData.weather[0].icon
-  console.log(`${process.env.REACT_APP_ICON_URL}n/${weatherIcon}.png`)
+  console.log(weatherData)
   return (
     <>
       <div className='weatherBox'>
@@ -32,7 +32,7 @@ export default function WeatherCard({ weatherData }) {
 
           <h4>{clouds}</h4>
           <div>
-            <img src={`${process.env.REACT_APP_ICON_URL}n/${weatherIcon}.png`} alt="" />
+            <img src={`${process.env.REACT_APP_ICON_URL}${weatherIcon}.png`} alt="" />
           </div>
         </div>
       </div>
