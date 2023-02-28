@@ -14,7 +14,7 @@ export default function PlaceHolder({ weatherData }) {
     let index = Math.round(degrees/45) % 8;
     return directions[index]
   }
-  console.log(weatherData)
+  // console.log(weatherData)
   return (
     <>
       <div className='weatherBoxSmallScreen'>
