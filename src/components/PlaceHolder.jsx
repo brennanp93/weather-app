@@ -28,29 +28,29 @@ export default function PlaceHolder({ weatherData }) {
             </div>
           </div>
         </div>
-        <div className='box4'>
+        <div className='box2'>
           <div>
             <img src='/white-sunrise.png' alt="" />
             <h4>{sunrise}</h4>
           </div>
         </div>
-        <div className='box5'>
+        <div className='box3'>
           <div>
             <img src="/white-sunset.png" alt="" />
             <h4>{sunset}</h4>
           </div>
         </div>
-        <div className='box2'>
-          <section>
+        <div className='box4'>
+          <div>
             <img src="/white-dew-point.png" alt="" />
             <h4>{humidity}%</h4>
-          </section>
+          </div>
         </div>
-        <div className='box2'>
-          <section>
+        <div className='box5'>
+          <div>
             <img src="/white-wind.png" alt="" />
             <h4>{wind}mph&nbsp;{directions}</h4>
-          </section>
+          </div>
         </div>
       </div>
     </>
