@@ -29,9 +29,9 @@ function App() {
           setData(res)
           // console.log(data)
         })
-        .catch((err) => {
-          console.log(err.message)
-        });
+        // .catch((err) => {
+        //   console.log(err.message)
+        // });
     }
     fetchData();
   }, [lat, long])
