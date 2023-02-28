@@ -1,4 +1,4 @@
-import { Card, CardContent } from 'semantic-ui-react'
+
 import moment from 'moment';
 export default function WeatherCard({ weatherData }) {
   const feelsLike = Math.round(weatherData.main.feels_like);
