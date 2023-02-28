@@ -1,4 +1,4 @@
-import WeatherCard from "./WeatherCard"
+
 export default function Weather ({weatherData}) {
   const temp = Math.round(weatherData.main.temp);
   const sunrise = new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
