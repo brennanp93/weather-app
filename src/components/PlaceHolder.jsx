@@ -7,7 +7,7 @@ export default function PlaceHolder({ weatherData }) {
       <div className='weatherBoxSmallScreen'>
         <div className='box1'>
           <h2>City Name</h2>
-          <h1>TempºF</h1>
+          <h3>Location Sharing Must Be On In Your Browser In Order To Retrieve Current Weather</h3>
           <div>
             <h4>Sky</h4>
             <div>
