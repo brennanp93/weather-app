@@ -1,4 +1,5 @@
 import moment from "moment";
+import HourlyWeather from "./HourlyWeather"
 export default function Weather({ weatherData }) {
   const temp = Math.round(weatherData.main.temp);
   let sunrise = moment(new Date(weatherData.sys.sunrise * 1000)).format('LT')
@@ -17,6 +18,7 @@ export default function Weather({ weatherData }) {
 
   return (
     <>
+
       <div className='weatherBoxSmallScreen'>
         <div className='box1'>
           <h2>{weatherData.name}</h2>
@@ -28,6 +30,7 @@ export default function Weather({ weatherData }) {
             </div>
           </div>
         </div>
+        {/* <HourlyWeather /> */}
         <div className='box2'>
           <div>
             <img src='/white-sunrise.png' alt="" />

@@ -4,28 +4,45 @@
   text-align: center;
   align-items: center;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 3fr 2fr;
   grid-template-rows: 1fr 2fr 1fr;
   margin: 0;
   height: 100vh;
   background-image: url("/public/largebg.jpg");
   background-size: cover;
-  font-family: 'Dosis', sans-serif;
+  /* font-family: 'Dosis', sans-serif; */
   color: white;
 }
 
 .weatherBoxSmallScreen {
-  grid-column: 2/ 2;
+  grid-column: 2/ 3;
   grid-row: 1/ -1;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2%;
   padding: 1%;
-  font-family: 'Dosis', sans-serif;
+  /* font-family: 'Dosis', sans-serif; */
 }
 
-.weatherBox {
+.hourly {
+  grid-column: 1/span 1;
+  grid-row: 1/-1;
+  display: grid;
+  /* grid-template-rows: repeat(4, 1fr); */
+  grid-template-rows: auto;
+ /* background-image: linear-gradient(rgba(128, 198, 230, 0.571), rgba(89, 109, 140, 0.753)); */
+  border-radius: 10px;
+  height: 100%;
+
+}
+
+.hourlyBox {
+  /* height: 12.5%; */
+  border-bottom: solid white 1px;
+}
+
+/* .weatherBox {
   grid-column: 2/ 2;
   grid-row: 1/ -1;
   display: grid;
@@ -35,10 +52,10 @@
   background-color: rgba(171, 203, 230, 0.851);
   border: solid black 2px;
   padding: 1%;
-}
+} */
 
 .weatherBoxSmallScreen>div {
-  background-image: linear-gradient(rgba(30, 92, 173, 0.9), rgba(123, 162, 213, 0.9));
+  background-image: linear-gradient(rgba(128, 198, 230, 0.571), rgba(89, 109, 140, 0.753));
   border-radius: 10px;
 
 }
@@ -49,11 +66,14 @@
 }
 
 .box1 {
-    padding: 4%;
-    place-items: center;
-  }
+  padding: 4%;
+  place-items: center;
+}
 
-.box2, .box3, .box4, .box5 {
+.box2,
+.box3,
+.box4,
+.box5 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,19 +84,41 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    /* grid-template-rows: auto 1fr auto; */
     background-image: url("/public/smallbg.jpg");
     background-size: cover;
+  }
+
+  .hourly {
+    grid-row: 2/ 3;
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr; */
+    height: 100%;
+  }
+
+  .hourlyBox {
+    grid-row: 1/span 3;
+    color: white;
+    border: none;
+    border-right: solid white 1px;
   }
 
   .weatherBoxSmallScreen {
     grid-column: span 2;
     grid-row: 2/span 4;
     display: grid;
+    grid-template-rows: auto auto auto auto;
     height: 100%;
-    padding: 5% 5% 0 5%;
+    padding: 5% 5% 5% 5%;
   }
 
   .weatherBoxSmallScreen>div {
-    background-image: linear-gradient(rgba(30, 92, 173, 0.753), rgba(123, 162, 213, 0.753));
+    background-image: linear-gradient(rgba(128, 198, 230, 0.571), rgba(89, 109, 140, 0.753));
+  }
+  .box1{
+    display: grid;
+    place-content: center;
   }
 }

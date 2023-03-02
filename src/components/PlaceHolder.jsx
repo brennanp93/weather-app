@@ -1,4 +1,4 @@
-// import moment from 'moment';
+import HourlyWeather from "./HourlyWeather"
 export default function PlaceHolder({ weatherData }) {
 
   // console.log(weatherData)
@@ -6,6 +6,7 @@ export default function PlaceHolder({ weatherData }) {
     <>
       <div className='weatherBoxSmallScreen'>
         <div className='box1'>
+          {/* <h2>{weatherData.city.name}</h2> */}
           <h2>City Name</h2>
           <h3>Location Sharing Must Be On In Your Browser In Order To Retrieve Current Weather</h3>
           <div>
@@ -15,6 +16,7 @@ export default function PlaceHolder({ weatherData }) {
             </div>
           </div>
         </div>
+       {/* <HourlyWeather /> */}
         <div className='box2'>
           <div>
             <img src='/white-sunrise.png' alt="" />
