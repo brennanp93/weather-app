@@ -34,12 +34,12 @@ export default function HourlyWeather({ hourlyData }) {
   // moment(new Date(hourlyReading[0]?.dt * 1000)).format('LT')
   // console.log(new Date(hourlyReading[4]?.dt *1000)).toLocaleTimeString('en-US', { timeZone: 'UTC' })
   // console.log(new Date(1677747600 * 1000).toLocaleTimeString('en-US', { timeZone: 'UTC' }))
-  console.log('BananaA', hourlyData)
+
   return (
     <>
       <div className="hourlyContainer">
-        {hourlyTemp.map((temp, idx) => (
-          <div className="hourlyBox">
+        {hourlyTemp?.map((temp, idx) => (
+          <div className="hourlyBox" key={idx}>
             <div>{hours[idx]}</div>
             <br></br>
             <div className="temp">{temp}º</div>
