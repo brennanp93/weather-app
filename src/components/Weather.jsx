@@ -18,8 +18,8 @@ export default function Weather({ weatherData, hourlyData }) {
 
   return (
     <>
-
       <div className='weatherBoxSmallScreen'>
+        <HourlyWeather hourlyData={hourlyData} />
         <div className='box1'>
           <h2>{weatherData.name}</h2>
           <h1>{temp}ºF</h1>
@@ -30,7 +30,7 @@ export default function Weather({ weatherData, hourlyData }) {
             </div>
           </div>
         </div>
-        <HourlyWeather hourlyData={hourlyData} />
+
         <div className='box2'>
           <div>
             <img src='/white-sunrise.png' alt="" />
