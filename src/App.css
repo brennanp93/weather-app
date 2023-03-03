@@ -13,13 +13,17 @@
   /* font-family: 'Dosis', sans-serif; */
   color: white;
 }
+.temp{
+  font-weight: bold;
 
+
+}
 .weatherBoxSmallScreen {
   grid-column: 2/4;
   grid-row: 2/ 3;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: .5fr 1fr 1fr;
   grid-gap: 2%;
   padding: 1%;
   /* font-family: 'Dosis', sans-serif; */
@@ -34,7 +38,7 @@
  /* background-image: linear-gradient(rgba(128, 198, 230, 0.571), rgba(89, 109, 140, 0.753)); */
   border-radius: 10px;
   /* height: 100%; */
-  max-height: 600px;
+  max-height: 75vh;
   overflow: scroll;
   background-image: linear-gradient(rgba(128, 198, 230, 0.571), rgba(89, 109, 140, 0.753));
 }

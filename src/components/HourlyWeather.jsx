@@ -38,11 +38,11 @@ export default function HourlyWeather({ hourlyData }) {
   return (
     <>
       <div className="hourlyContainer">
-        {hourlyTemp.map((hour, idx) => (
+        {hourlyTemp.map((temp, idx) => (
           <div className="hourlyBox">
-            <div>{hour}º</div>
-            <br></br>
             <div>{hours[idx]}</div>
+            <br></br>
+            <div className="temp">{temp}º</div>
           </div>
           
         ))}
