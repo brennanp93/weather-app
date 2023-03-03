@@ -25,7 +25,7 @@
   /* font-family: 'Dosis', sans-serif; */
 }
 
-.hourly {
+.hourlyContainer {
   grid-column: 1/span 1;
   grid-row: 1/-1;
   display: grid;
@@ -34,6 +34,7 @@
  /* background-image: linear-gradient(rgba(128, 198, 230, 0.571), rgba(89, 109, 140, 0.753)); */
   border-radius: 10px;
   height: 100%;
+  overflow: scroll;
 
 }
 
@@ -89,20 +90,26 @@
     background-size: cover;
   }
 
-  .hourly {
+  .hourlyContainer {
     grid-row: 2/ 3;
     grid-column: span 2;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(24, 1fr);
     /* grid-template-rows: 1fr 1fr; */
     height: 100%;
+    overflow: scroll;
   }
-
+  .hourlyContainer::-webkit-scrollbar{
+    display: none;
+  }
   .hourlyBox {
     grid-row: 1/span 3;
     color: white;
     border: none;
     border-right: solid white 1px;
+    padding: 10px;
+
   }
 
   .weatherBoxSmallScreen {

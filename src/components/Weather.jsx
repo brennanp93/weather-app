@@ -1,6 +1,6 @@
 import moment from "moment";
 import HourlyWeather from "./HourlyWeather"
-export default function Weather({ weatherData }) {
+export default function Weather({ weatherData, hourlyData }) {
   const temp = Math.round(weatherData.main.temp);
   let sunrise = moment(new Date(weatherData.sys.sunrise * 1000)).format('LT')
   let sunset = moment(new Date(weatherData.sys.sunset * 1000)).format('LT')
@@ -30,7 +30,7 @@ export default function Weather({ weatherData }) {
             </div>
           </div>
         </div>
-        {/* <HourlyWeather /> */}
+        <HourlyWeather hourlyData={hourlyData} />
         <div className='box2'>
           <div>
             <img src='/white-sunrise.png' alt="" />
