@@ -40,7 +40,7 @@ export default function HourlyWeather({ hourlyData }) {
       <div className="hourlyContainer">
         {hourlyTemp.map((hour, idx) => (
           <div className="hourlyBox">
-            <div>{hour}</div>
+            <div>{hour}º</div>
             <br></br>
             <div>{hours[idx]}</div>
           </div>

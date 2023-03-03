@@ -43,7 +43,7 @@
 }
 
 .hourlyBox {
-  /* height: 12.5%; */
+  padding: 5%;
   border-bottom: solid white 1px;
 }
 
@@ -171,6 +171,10 @@
     border: none;
     border-right: solid white 1px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
   }
 

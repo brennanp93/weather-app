@@ -33,12 +33,12 @@ function App() {
         .catch((err) => {
           console.log(err.message)
         });
-console.log(`https://api.open-meteo.com/v1/forecast?latitude=${lat.toFixed(2)}&longitude=${long.toFixed(2)}&hourly=temperature_2m&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timeformat=unixtime&timezone=America%2FLos_Angeles`)
+// console.log(`https://api.open-meteo.com/v1/forecast?latitude=${lat.toFixed(2)}&longitude=${long.toFixed(2)}&hourly=temperature_2m&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch&timeformat=unixtime&timezone=America%2FLos_Angeles`)
         await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m&temperature_unit=fahrenheit&start_date=2023-03-01&end_date=2023-03-01`)
         .then(res => res.json())
         .then(res => {
           setHourlyData(res)
-          console.log(hourlyData, 'hourly')
+          // console.log(hourlyData, 'hourly')
         })
         .catch((err) => {
           console.log(err.message)
