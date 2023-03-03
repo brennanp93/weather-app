@@ -112,7 +112,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(4,1fr);
     height: 100%;
-    padding: 5% 5% 5% 5%;
+    /* padding: 5% 5% 5% 5%; */
     
   }
 
