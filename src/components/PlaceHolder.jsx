@@ -16,7 +16,7 @@ export default function PlaceHolder({ weatherData }) {
             </div>
           </div>
         </div>
-       {/* <HourlyWeather /> */}
+        <div className="hourlyContainer"></div>
         <div className='box2'>
           <div>
             <img src='/white-sunrise.png' alt="" />
