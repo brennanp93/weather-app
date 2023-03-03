@@ -39,8 +39,9 @@
   /* grid-template-rows: auto; */
   /* background-image: linear-gradient(rgba(128, 198, 230, 0.571), rgba(89, 109, 140, 0.753)); */
   border-radius: 10px;
-  /* height: 100%; */
-  max-height: 75vh;
+  width: 75%;
+  height:82vh;
+  place-self: center;
   overflow: scroll;
   background-image: linear-gradient(rgba(128, 198, 230, 0.571), rgba(89, 109, 140, 0.753));
 }
@@ -51,7 +52,7 @@
 
 .hourlyBox {
   padding: 5%;
-  border-bottom: solid white 1px;
+  border-bottom: solid rgba(255, 255, 255, 0.5) 1px;
 }
 
 .weatherBoxSmallScreen>div {
@@ -185,16 +186,18 @@
     grid-template-columns: repeat(24, 1fr);
     /* grid-template-rows: 1fr 1fr; */
     background-image: linear-gradient(rgba(128, 198, 230, 0.571), rgba(89, 109, 140, 0.753));
-    /* max-height: 50%; */
+    max-height: 100px;
     min-height: 100px;
     overflow: scroll;
+    place-self:inherit ;
+    width: 100%;
   }
 
   .hourlyBox {
     grid-row: 1/span 2;
     color: rgba(255, 255, 255, 0.75);
     border: none;
-    border-right: solid rgba(255, 255, 255, 0.426) 1px;
+    border-right: solid rgba(255, 255, 255, 0.5) 1px;
     padding: 10px;
     display: flex;
     flex-direction: column;
