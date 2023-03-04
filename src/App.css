@@ -55,6 +55,9 @@
   border-bottom: solid rgba(255, 255, 255, 0.5) 1px;
 }
 
+.hourlyBox:last-child{
+  border-style: none;
+}
 .weatherBoxSmallScreen>div {
   background-image: linear-gradient(rgba(128, 198, 230, 0.571), rgba(89, 109, 140, 0.753));
   border-radius: 10px;
@@ -207,7 +210,4 @@
 
   }
 
-.hourlyBox:last-child{
-  border-style: none;
-}
 }
