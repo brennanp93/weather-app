@@ -1,26 +1,31 @@
 import moment from "moment";
-export default function HourlyWeather({ hourlyData }) {
+export default function HourlyWeather({ hourlyData, temp }) {
   const currentDate = new Date()
   const currentHour = parseInt(currentDate.getHours().toString().padStart(2, '0'));
 
   let hourlyTemp = hourlyData?.hourly?.temperature_2m;
-  
+
   let timeArray = hourlyData?.hourly?.time.map((t) => t = moment(t * 1000).format('h a'));
-  
+
   let shortTimeData = hourlyData?.hourly?.time.map((t) => t = new Date(t * 1000).getHours());
-  
+
   let futureIndex = shortTimeData?.indexOf(currentHour) + 12;
 
-  let twelveHourForcastTemp = hourlyTemp?.slice(currentHour, futureIndex);
-  let twelveHourForcastHours = timeArray?.slice(currentHour, futureIndex);
-
+  let twelveHourForcastTemp = hourlyTemp?.slice(currentHour + 1, futureIndex);
+  let twelveHourForcastHours = timeArray?.slice(currentHour + 1, futureIndex);
+  // console.log(twelveHourForcastTemp, twelveHourForcastHours)
   return (
     <>
       <div className="hourlyContainer">
+        <div className="hourlyBox">
+          <div>Now</div>
+          <br/>
+          <div className="temp" >{temp}</div>
+        </div>
         {twelveHourForcastHours?.map((hours, idx) => (
           <div className="hourlyBox" key={idx}>
             <div>{hours}</div>
-            <br></br>
+            <br/>
             < div className="temp">{twelveHourForcastTemp[idx]}º</div>
           </div>
         ))}

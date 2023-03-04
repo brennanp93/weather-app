@@ -30,7 +30,7 @@ export default function Weather({ weatherData, hourlyData }) {
             </div>
           </div>
         </div>
-        <HourlyWeather hourlyData={hourlyData} />
+        <HourlyWeather hourlyData={hourlyData} temp={temp} />
         <div className='box2'>
           <div>
             <img src='/white-sunrise.png' alt="" />
