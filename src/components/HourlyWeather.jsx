@@ -3,7 +3,7 @@ export default function HourlyWeather({ hourlyData, temp }) {
   const currentDate = new Date()
   const currentHour = parseInt(currentDate.getHours().toString().padStart(2, '0'));
 
-  let hourlyTemp = hourlyData?.hourly?.temperature_2m;
+  let hourlyTemp = hourlyData?.hourly?.temperature_2m.map(t => t = Math.round(t));
 
   let timeArray = hourlyData?.hourly?.time.map((t) => t = moment(t * 1000).format('h a'));
 
@@ -20,7 +20,7 @@ export default function HourlyWeather({ hourlyData, temp }) {
         <div className="hourlyBox">
           <div>Now</div>
           <br/>
-          <div className="temp" >{temp}</div>
+          <div className="temp" >{temp}º</div>
         </div>
         {twelveHourForcastHours?.map((hours, idx) => (
           <div className="hourlyBox" key={idx}>
