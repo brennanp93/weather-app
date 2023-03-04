@@ -24,7 +24,7 @@ function App() {
         .catch((err) => {
           console.log(err.message)
         });
-      await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m&current_weather=true&temperature_unit=fahrenheit&timeformat=unixtime&timezone=America%2FLos_Angeles`)
+      await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m&daily=temperature_2m_max,temperature_2m_min&current_weather=true&temperature_unit=fahrenheit&timeformat=unixtime&timezone=America%2FLos_Angeles`)
         .then(res => res.json())
         .then(res => {
           setHourlyData(res)
@@ -35,7 +35,7 @@ function App() {
     };
     fetchData();
   }, [lat, long]);
-
+// console.log( data)
   return (
     <div className="App">
 

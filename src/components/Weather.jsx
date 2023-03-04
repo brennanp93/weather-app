@@ -52,7 +52,7 @@ export default function Weather({ weatherData, hourlyData }) {
         <div className='box5'>
           <section>
             <img src="/white-wind.png" alt="" />
-            <h4>{wind}mph&nbsp;{directions}</h4>
+            <h4>{wind}&nbsp;mph&nbsp;{directions}</h4>
           </section>
         </div>
       </div>
