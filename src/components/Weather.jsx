@@ -2,19 +2,19 @@ import moment from "moment";
 import HourlyWeather from "./HourlyWeather"
 export default function Weather({ weatherData, hourlyData }) {
   const temp = Math.round(weatherData.main.temp);
-  let sunrise = moment(new Date(weatherData.sys.sunrise * 1000)).format('LT')
-  let sunset = moment(new Date(weatherData.sys.sunset * 1000)).format('LT')
-  const clouds = weatherData.weather[0].description.toUpperCase()
-  const high = Math.round(weatherData.main.temp_max)
-  const low = Math.round(weatherData.main.temp_min)
-  const humidity = weatherData.main.humidity
-  const wind = weatherData.wind.speed
-  let directions = getDirections(weatherData.wind.deg)
+  let sunrise = moment(new Date(weatherData.sys.sunrise * 1000)).format('LT');
+  let sunset = moment(new Date(weatherData.sys.sunset * 1000)).format('LT');
+  const clouds = weatherData.weather[0].description.toUpperCase();
+  const high = Math.round(weatherData.main.temp_max);
+  const low = Math.round(weatherData.main.temp_min);
+  const humidity = weatherData.main.humidity;
+  const wind = weatherData.wind.speed;
+  let directions = getDirections(weatherData.wind.deg);
   function getDirections(degrees) {
     const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW']
     let index = Math.round(degrees / 45) % 8;
     return directions[index]
-  }
+  };
 
   return (
     <>
