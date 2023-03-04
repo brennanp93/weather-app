@@ -13,7 +13,7 @@ export default function HourlyWeather({ hourlyData, temp }) {
 
   let twelveHourForcastTemp = hourlyTemp?.slice(currentHour + 1, futureIndex);
   let twelveHourForcastHours = timeArray?.slice(currentHour + 1, futureIndex);
-  // console.log(twelveHourForcastTemp, twelveHourForcastHours)
+  // console.log(hourlyData)
   return (
     <>
       <div className="hourlyContainer">
