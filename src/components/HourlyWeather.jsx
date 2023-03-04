@@ -3,11 +3,11 @@ export default function HourlyWeather({ hourlyData, temp }) {
   const currentDate = new Date()
   const currentHour = parseInt(currentDate.getHours().toString().padStart(2, '0'));
 
-  let hourlyTemp = hourlyData?.hourly?.temperature_2m.map(t => t = Math.round(t));
+  let hourlyTemp = hourlyData?.hourly?.temperature_2m?.map(t => t = Math.round(t));
 
-  let timeArray = hourlyData?.hourly?.time.map((t) => t = moment(t * 1000).format('h a'));
+  let timeArray = hourlyData?.hourly?.time?.map((t) => t = moment(t * 1000).format('h a'));
 
-  let shortTimeData = hourlyData?.hourly?.time.map((t) => t = new Date(t * 1000).getHours());
+  let shortTimeData = hourlyData?.hourly?.time?.map((t) => t = new Date(t * 1000).getHours());
 
   let futureIndex = shortTimeData?.indexOf(currentHour) + 12;
 

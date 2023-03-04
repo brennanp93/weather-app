@@ -1,7 +1,7 @@
 import moment from "moment";
 import HourlyWeather from "./HourlyWeather"
 export default function Weather({ weatherData, hourlyData }) {
-  const temp = Math.round(hourlyData.current_weather.temperature);
+  const temp = Math.round(hourlyData?.current_weather?.temperature);
   let sunrise = moment(new Date(weatherData.sys.sunrise * 1000)).format('LT');
   let sunset = moment(new Date(weatherData.sys.sunset * 1000)).format('LT');
   const clouds = weatherData.weather[0].description.toUpperCase();
