@@ -10,16 +10,17 @@ export default function Weather({ weatherData, hourlyData }) {
   const humidity = weatherData.main.humidity;
   const wind = weatherData.wind.speed;
   let directions = getDirections(weatherData.wind.deg);
+
+  // Calculate the wind directeion based on degrees. 
   function getDirections(degrees) {
     const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW']
     let index = Math.round(degrees / 45) % 8;
     return directions[index]
   };
-// console.log(weatherData)
+
   return (
     <>
-      <div className='weatherBoxSmallScreen'>
-
+      <div className='weatherBox'>
         <div className='box1'>
           <h2>{weatherData.name}</h2>
           <h1>{temp}ºF</h1>
@@ -58,4 +59,4 @@ export default function Weather({ weatherData, hourlyData }) {
       </div>
     </>
   )
-}
+};
