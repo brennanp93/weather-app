@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import PlaceHolder from "./components/PlaceHolder";
+import Search from "./components/Search";
 import Weather from "./components/Weather";
 
 export default function App() {
@@ -38,9 +39,10 @@ export default function App() {
     };
     fetchData();
   }, [lat, long]);
-
+  // console.log(`http://api.openweathermap.org/geo/1.0/direct?q=SANTA_ANA,CA,us&limit=5&appid=${process.env.REACT_APP_API_KEY}`)
   return (
     <div className="App">
+      <Search lat={lat} long={long} />
       {typeof data.main != "undefined" ? (
         <Weather weatherData={data} hourlyData={hourlyData} />
       ) : (

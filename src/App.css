@@ -3,7 +3,7 @@
   align-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr 3fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-rows: 50px 1fr 2fr 1fr;
   margin: 0;
   height: 100vh;
   background-image: url("/public/largebg.jpg");
@@ -15,12 +15,19 @@
   font-weight: bold;
 }
 
+.searchBox {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: row;
+}
+
 .weatherBox {
   grid-column: 2/4;
   grid-row: 2/ 3;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: .5fr 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr 1fr;
   grid-gap: 2%;
   padding: 1%;
 }
@@ -34,7 +41,10 @@
   height: 82vh;
   place-self: center;
   overflow: scroll;
-  background-image: linear-gradient(rgba(128, 198, 230, 0.571), rgba(89, 109, 140, 0.753));
+  background-image: linear-gradient(
+    rgba(128, 198, 230, 0.571),
+    rgba(89, 109, 140, 0.753)
+  );
 }
 
 .hourlyContainer::-webkit-scrollbar {
@@ -50,8 +60,11 @@
   border-style: none;
 }
 
-.weatherBox>div {
-  background-image: linear-gradient(rgba(128, 198, 230, 0.571), rgba(89, 109, 140, 0.753));
+.weatherBox > div {
+  background-image: linear-gradient(
+    rgba(128, 198, 230, 0.571),
+    rgba(89, 109, 140, 0.753)
+  );
   border-radius: 10px;
 }
 
@@ -103,17 +116,22 @@
   .App {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr;
     background-image: url("/public/smallbg.jpg");
     background-size: cover;
   }
 
+  .searchBox {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
   .weatherBox {
     grid-column: 1/3;
-    grid-row: 1/ span 6;
+    grid-row: 1 / span 6;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr .5fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 1fr 1fr;
     padding: 5% 5% 5% 5%;
   }
 
@@ -164,7 +182,10 @@
     grid-column: 1/3;
     display: grid;
     grid-template-columns: repeat(12, 25%);
-    background-image: linear-gradient(rgba(128, 198, 230, 0.571), rgba(89, 109, 140, 0.753));
+    background-image: linear-gradient(
+      rgba(128, 198, 230, 0.571),
+      rgba(89, 109, 140, 0.753)
+    );
     max-height: 100px;
     min-height: 100px;
     overflow: scroll;
@@ -173,7 +194,7 @@
   }
 
   .hourlyBox {
-    grid-row: 1/span 2;
+    grid-row: 1 / span 2;
     color: rgba(255, 255, 255, 0.75);
     border: none;
     border-right: solid rgba(255, 255, 255, 0.5) 1px;
@@ -184,4 +205,3 @@
     align-items: center;
   }
 }
-
