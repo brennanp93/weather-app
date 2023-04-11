@@ -10,22 +10,28 @@ export default function App() {
   const [data, setData] = useState([]);
   const [hourlyData, setHourlyData] = useState([]);
 
+  function pullLatLong(latitude, longitude) {
+    setLat(latitude);
+    setLong(longitude);
+  }
+
+
   useEffect(() => {
     const fetchData = async () => {
       navigator.geolocation.getCurrentPosition(function (position) {
         setLat(parseFloat(position.coords.latitude));
         setLong(parseFloat(position.coords.longitude));
       });
-      await fetch(
-        `${process.env.REACT_APP_API_URL}/weather/?lat=${lat}&lon=${long}&units=imperial&APPID=${process.env.REACT_APP_API_KEY}`
-      )
-        .then((res) => res.json())
-        .then((res) => {
-          setData(res);
-        })
-        .catch((err) => {
-          console.log(err.message);
-        });
+      // await fetch(
+      //   `${process.env.REACT_APP_API_URL}/weather/?lat=${lat}&lon=${long}&units=imperial&APPID=${process.env.REACT_APP_API_KEY}`
+      // )
+      //   .then((res) => res.json())
+      //   .then((res) => {
+      //     setData(res);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err.message);
+      //   });
       await fetch(
         `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m&daily=temperature_2m_max,temperature_2m_min&current_weather=true&temperature_unit=fahrenheit&timeformat=unixtime&timezone=America%2FLos_Angeles`
       )
@@ -39,10 +45,11 @@ export default function App() {
     };
     fetchData();
   }, [lat, long]);
+  console.log(lat, long);
   // console.log(`http://api.openweathermap.org/geo/1.0/direct?q=SANTA_ANA,CA,us&limit=5&appid=${process.env.REACT_APP_API_KEY}`)
   return (
     <div className="App">
-      <Search lat={lat} long={long} />
+      <Search pullLatLong={pullLatLong} setLat={setLat} setLong={setLong} />
       {typeof data.main != "undefined" ? (
         <Weather weatherData={data} hourlyData={hourlyData} />
       ) : (
